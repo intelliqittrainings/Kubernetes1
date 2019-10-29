@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: webserver-pod
+ labels:
+  author: intelliq
+  type: front-end
+spec:
+ containers:
+  - name: webserver
+    image: nginx
+
+...

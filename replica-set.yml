@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+
+metadata:
+ name: httpd-rc
+ labels:
+  app: guestbook
+  tier: frontend
+spec:
+ replicas: 4
+ selector:
+  matchLabels:
+   tier: frontend
+ template:
+  metadata:
+   name: httpd-pod
+   labels:
+    tier: frontend
+  spec:
+   containers:
+    - name: webserver
+      image: httpd
+      ports:
+       - containerPort: 80
+         hostPort: 8888
+
+
+
+
+
+
